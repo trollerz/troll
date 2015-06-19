@@ -1,0 +1,94 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
+  <script>
+  				function yellow() {
+					document.body.style.backgroundColor = "rgb(252, 255, 0)";
+  
+    $(document).ready(function(){
+	    
+		
+		$("h1").fitText();
+		
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			setTimeout(function(){}, 1000);} 
+			else { $("#jquery_jplayer_1").jPlayer({
+				ready: function () {
+					$(this).jPlayer("setMedia", {
+						m4a: "hey.m4a",
+						oga: "hey.ogg"
+					}).jPlayer("play");},
+				ended: function (event) { $(this).jPlayer("stop"); },
+				swfPath: "/js",
+				supplied: "m4a, oga"});}
+		});
+    
+    (function( $ ){
+		$.fn.fitText = function( kompressor, options ) {
+		    var settings = {
+	        'minFontSize' : Number.NEGATIVE_INFINITY,
+	        'maxFontSize' : Number.POSITIVE_INFINITY
+	      };
+				return this.each(function(){
+					var $this = $(this);           
+					var compressor = kompressor || 1;
+	        if ( options ) { 
+	          $.extend( settings, options );
+	        }
+					var resizer = function () {
+						$this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
+					};
+					resizer();
+	      	$(window).resize(resizer); });};
+	})( jQuery );
+  </script>
+  <style>
+  	html, body {
+  		width: 100%;
+  		height: 100%;
+  		background-color: #fff;
+  		border: 0px;
+  		padding: 0px;
+  	}
+  	
+  	#inner {
+	  	width: 100%;
+	  	height: 100%;
+	  	display: table;
+  	}
+  
+  	h1 {
+  		display: table-cell;
+  		vertical-align: middle;
+  		font-family: Helvetica, Arial, sans-serif;
+  		font-size: 50px;
+  		text-align: center;
+  		height: 50px;
+  	}
+  	
+  	#footer { bottom: 5px; position: absolute; color: #999; font-family: Helvetica, Arial, sans-serif; font-size: 11px;}
+  	#social { bottom: 5px; right: 5px; position: absolute; }
+  	a { color: #999; }
+ 
+			
+  </style>  
+  <title>DIIIIIIIIICK!</title>
+  
+</head>
+<body>
+
+	<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+	<div id="inner">
+	<h1>DIIIIIIIIICK!</h1>	
+	</div>
+
+
+	<div id="footer"> 
+		Made by <a href="wut.html">Dick</a> <a href="troll.html">Dick Tunes</a>
+	</div> 
+	
+</body>
+</html>
